@@ -1,0 +1,25 @@
+title: {{TITLE}}
+id: {{uuid}} 
+status: stable
+description: {{Description}}
+tags:
+    - DetectionEngine01
+author: {{name surname}} - Dectar © 2024
+date: 2023/01/01
+references:
+    - http://www.dectar.com
+logsource:
+    category: client
+    product: All
+detection:
+    selection:
+        message:
+            - '*Connection closed by invalid user*'
+            - '*Connection closed by invalid user*'  
+    condition: selection
+level: low
+xdrplus:
+    workflows:
+        - default-notify-incident
+    alert_category: sshd LOW security threat
+    alert_service: Detection Engine 01
